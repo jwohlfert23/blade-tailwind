@@ -1,6 +1,6 @@
 <?php
 
-namespace Jwohlfert23\BladeTailwind\Tests;
+namespace Jwohlfert23\LaravelTall\Tests;
 
 class ExampleTest extends TestCase
 {

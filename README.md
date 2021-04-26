@@ -1,4 +1,4 @@
-# This is my package BladeTailwind
+# This is my package LaravelTall
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jwohlfert23/laravel-tall.svg?style=flat-square)](https://packagist.org/packages/jwohlfert23/laravel-tall)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/jwohlfert23/laravel-tall/run-tests?label=tests)](https://github.com/jwohlfert23/laravel-tall/actions?query=workflow%3Arun-tests+branch%3Amaster)
@@ -36,13 +36,13 @@ composer require jwohlfert23/laravel-tall
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Jwohlfert23\BladeTailwind\BladeTailwindServiceProvider" --tag="laravel-tall-migrations"
+php artisan vendor:publish --provider="Jwohlfert23\LaravelTall\BladeTailwindServiceProvider" --tag="laravel-tall-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Jwohlfert23\BladeTailwind\BladeTailwindServiceProvider" --tag="laravel-tall-config"
+php artisan vendor:publish --provider="Jwohlfert23\LaravelTall\BladeTailwindServiceProvider" --tag="laravel-tall-config"
 ```
 
 This is the contents of the published config file:
@@ -55,7 +55,7 @@ return [
 ## Usage
 
 ```php
-$blade-tailwind = new Jwohlfert23\BladeTailwind();
+$blade-tailwind = new Jwohlfert23\LaravelTall();
 echo $blade-tailwind->echoPhrase('Hello, Spatie!');
 ```
 

@@ -31,13 +31,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Jwohlfert23\\BladeTailwind\\": "src",
-            "Jwohlfert23\\BladeTailwind\\Database\\Factories\\": "database/factories"
+            "Jwohlfert23\\LaravelTall\\": "src",
+            "Jwohlfert23\\LaravelTall\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Jwohlfert23\\BladeTailwind\\Tests\\": "tests"
+            "Jwohlfert23\\LaravelTall\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,10 +51,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Jwohlfert23\\BladeTailwind\\BladeTailwindServiceProvider"
+                "Jwohlfert23\\LaravelTall\\BladeTailwindServiceProvider"
             ],
             "aliases": {
-                "BladeTailwind": "Jwohlfert23\\BladeTailwind\\BladeTailwindFacade"
+                "LaravelTall": "Jwohlfert23\\LaravelTall\\BladeTailwindFacade"
             }
         }
     },

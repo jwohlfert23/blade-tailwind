@@ -1,2 +1,2 @@
 providers:
-  - Jwohlfert23\BladeTailwind\BladeTailwindServiceProvider
+  - Jwohlfert23\LaravelTall\BladeTailwindServiceProvider

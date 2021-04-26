@@ -1,26 +1,23 @@
 <?php
 
-namespace Jwohlfert23\BladeTailwind\Tests;
+namespace Jwohlfert23\LaravelTall\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Jwohlfert23\LaravelTall\LaravelTallServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Jwohlfert23\BladeTailwind\BladeTailwindServiceProvider;
+use Jwohlfert23\LaravelTall\BladeTailwindServiceProvider;
 
 class TestCase extends Orchestra
 {
     public function setUp(): void
     {
         parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Spatie\\BladeTailwind\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            BladeTailwindServiceProvider::class,
+            LaravelTallServiceProvider::class,
         ];
     }
 
