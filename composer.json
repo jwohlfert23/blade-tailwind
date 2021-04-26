@@ -51,11 +51,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Jwohlfert23\\LaravelTall\\BladeTailwindServiceProvider"
-            ],
-            "aliases": {
-                "LaravelTall": "Jwohlfert23\\LaravelTall\\BladeTailwindFacade"
-            }
+                "Jwohlfert23\\LaravelTall\\LaravelTallServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
