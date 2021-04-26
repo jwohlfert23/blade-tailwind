@@ -13,11 +13,14 @@ class Icon extends Component
         $this->mode = $mode;
     }
 
-    public function render()
+    public function render() : \Closure
     {
-        $path = __DIR__."../../../resources/icons/{$this->mode}/{$this->icon}.svg";
-        $svg = file_exists($path) ? file_get_contents($path) : '';
-        $svg = str_replace('<svg ', '<svg '.$this->attributes->except(['icon', 'mode']).' ', $svg);
-        return $svg;
+        return function (array $data) {
+            $path = base_path("vendor/jwohlfert23/laravel-tall/resources/icons/{$this->mode}/{$this->icon}.svg");
+            $svg = file_exists($path) ? file_get_contents($path) : '';
+            $svg = str_replace('<svg ', '<svg '.$data['attributes'].' ', $svg);
+            return $svg;
+        };
+
     }
 }
