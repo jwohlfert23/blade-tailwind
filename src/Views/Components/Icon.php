@@ -18,6 +18,7 @@ class Icon extends Component
         $path = __DIR__."../../../resources/icons/{$this->mode}/{$this->icon}.svg";
         $svg = file_exists($path) ? file_get_contents($path) : '';
         $svg = str_replace('<svg ', '<svg '.$this->attributes->except(['icon', 'mode']).' ', $svg);
+
         return $svg;
     }
 }
