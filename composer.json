@@ -1,22 +1,23 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "jwohlfert23/laravel-tall",
+    "description": "A set of blade components for TALL stack modeled after Tailwind UI",
     "keywords": [
-        ":vendor_name",
+        "jwohlfert23",
         "laravel",
-        "package_slug"
+        "tall",
+        "alpine"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/jwohlfert23/laravel-tall",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Jack Wohlfert",
+            "email": "jack.wohlfert@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^7.4",
         "spatie/laravel-package-tools": "^1.4.3",
         "illuminate/contracts": "^8.37"
     },
@@ -30,13 +31,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Jwohlfert23\\BladeTailwind\\": "src",
+            "Jwohlfert23\\BladeTailwind\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Jwohlfert23\\BladeTailwind\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,10 +51,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Jwohlfert23\\BladeTailwind\\BladeTailwindServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "BladeTailwind": "Jwohlfert23\\BladeTailwind\\BladeTailwindFacade"
             }
         }
     },

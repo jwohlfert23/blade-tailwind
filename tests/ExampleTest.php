@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Jwohlfert23\BladeTailwind\Tests;
 
 class ExampleTest extends TestCase
 {
