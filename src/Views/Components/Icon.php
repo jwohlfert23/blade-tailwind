@@ -21,6 +21,5 @@ class Icon extends Component
             $svg = str_replace('<svg ', '<svg '.$data['attributes'].' ', $svg);
             return $svg;
         };
-
     }
 }
