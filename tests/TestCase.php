@@ -2,10 +2,8 @@
 
 namespace Jwohlfert23\LaravelTall\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Jwohlfert23\LaravelTall\LaravelTallServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Jwohlfert23\LaravelTall\BladeTailwindServiceProvider;
 
 class TestCase extends Orchestra
 {
