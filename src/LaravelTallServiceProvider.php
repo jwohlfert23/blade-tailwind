@@ -15,8 +15,12 @@ class LaravelTallServiceProvider extends ServiceProvider
 
         Blade::component('icon', Icon::class);
 
+        Blade::directive('tallStyles', function () {
+            return '<style>'.file_get_contents(__DIR__.'/../resources/css/styles.css').'</style>';
+        });
+
         collect(scandir(__DIR__.'/../resources/views/components'))
-            ->filter(fn ($filename) => Str::endsWith($filename, '.blade.php'))
+            ->filter(fn($filename) => Str::endsWith($filename, '.blade.php'))
             ->each(function ($filename) {
                 $component = str_replace('.blade.php', '', $filename);
                 Blade::component('tall::components.'.$component, $component);

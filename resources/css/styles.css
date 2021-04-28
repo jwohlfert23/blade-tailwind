@@ -1,0 +1,33 @@
+.btn[disabled] {
+    --tw-bg-opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.loading > span {
+    animation: loading 1s infinite alternate;
+}
+
+.loading > span:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+
+.loading > span:nth-of-type(3) {
+    animation-delay: 0.4s;
+}
+
+.loading > span:nth-of-type(4) {
+    animation-delay: 0.6s;
+}
+
+.loading > span:nth-of-type(5) {
+    animation-delay: 0.6s;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
