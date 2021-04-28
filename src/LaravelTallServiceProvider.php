@@ -20,7 +20,7 @@ class LaravelTallServiceProvider extends ServiceProvider
         });
 
         collect(scandir(__DIR__.'/../resources/views/components'))
-            ->filter(fn($filename) => Str::endsWith($filename, '.blade.php'))
+            ->filter(fn ($filename) => Str::endsWith($filename, '.blade.php'))
             ->each(function ($filename) {
                 $component = str_replace('.blade.php', '', $filename);
                 Blade::component('tall::components.'.$component, $component);
