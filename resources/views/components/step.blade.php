@@ -3,7 +3,7 @@ $class = "w-full focus:outline-none group pl-4 py-2 flex flex-col border-l-4 md:
 if (! empty($complete)) {
     $class .= 'border-primary';
 } else {
-    $class = 'border-gray-200 hover:border-gray-300';
+    $class .= 'border-gray-200 hover:border-gray-300';
 }
 ?>
 <li class="md:flex-1">
