@@ -2,10 +2,10 @@
     $index = $index ?? 0;
 @endphp
 <li class="{{$index > 0 ? 'border-t border-gray-200' : ''}}">
-    <a
+    @if(isset($href)) <a
         {{$attributes->only('href', 'onClick')}}
         class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out"
-    >
+    >  @endif
         <div class="flex items-center px-4 py-4 sm:px-6">
             <div class="min-w-0 flex-1 flex items-center">
 
@@ -40,5 +40,5 @@
                 </div>
             @endif
         </div>
-    </a>
+        @if(isset($href)) </a> @endif
 </li>
