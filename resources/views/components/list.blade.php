@@ -1,5 +1,5 @@
-<div {{$attributes->merge(['class' => 'bg-white border shadow-sm overflow-hidden sm:rounded-md'])}}>
+<x-card {{$attributes->merge(['padding' => 'p-0'])}}>
     <ul>
         {{$slot}}
     </ul>
-</div>
+</x-card>
