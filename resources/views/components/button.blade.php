@@ -3,8 +3,8 @@ $color = $color ?? 'primary';
 $size = $size ?? 'md';
 $component = $component ?? 'button';
 
-if (in_array($color, ['gray', 'red', 'yellow', 'green', 'blue', 'indigo', 'purple', 'pink'])) {
-    $colorClasses = "bg-$color-100";
+if (\Illuminate\Support\Str::startsWith($color, 'bg-')) {
+    $colorClasses = $color;
 } elseif ($color === 'white') {
     $colorClasses = "bg-white hover:bg-gray-100 text-gray-800 hover:text-gray-900";
 } else {
