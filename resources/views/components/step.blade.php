@@ -14,5 +14,6 @@ if (! empty($complete)) {
             Step {{$index + 1}}
         </span>
         <span class="text-sm font-medium">{{$label}}</span>
+        {{$slot}}
     </button>
 </li>
