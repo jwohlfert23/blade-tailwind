@@ -1,73 +1,42 @@
-# This is my package LaravelTall
+# Laravel TALL
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/jwohlfert23/laravel-tall.svg?style=flat-square)](https://packagist.org/packages/jwohlfert23/laravel-tall)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/jwohlfert23/laravel-tall/run-tests?label=tests)](https://github.com/jwohlfert23/laravel-tall/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/jwohlfert23/laravel-tall/Check%20&%20fix%20styling?label=code%20style)](https://github.com/jwohlfert23/laravel-tall/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/jwohlfert23/laravel-tall.svg?style=flat-square)](https://packagist.org/packages/jwohlfert23/laravel-tall)
-
----
-This repo can be used as to scaffold a Laravel package. Follow these steps to get started:
-
-1. Press the "Use template" button at the top of this repo to create a new repo with the contents of this laravel-tall
-2. Run "./configure.sh" to run a script that will replace all placeholders throughout all the files
-3. Remove this block of text.
-4. Have fun creating your package.
-5. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
----
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-tall.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-tall)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+A set of opinionated blade components to be used in the TALL stack (Tailwind, Alpine, Livewire, Laravel). Based on the examples provided via Tailwind UI.
 
 ## Installation
-
-You can install the package via composer:
 
 ```bash
 composer require jwohlfert23/laravel-tall
 ```
 
-You can publish and run the migrations with:
+Be sure to install and compile tailwind following their instructions here: https://tailwindcss.com/docs/installation
 
-```bash
-php artisan vendor:publish --provider="Jwohlfert23\LaravelTall\BladeTailwindServiceProvider" --tag="laravel-tall-migrations"
-php artisan migrate
+Once installed, to make these components work, you will need to add an override breakpoint, so that you are able to override default
+tailwind classes.
+
+```js
+const { screens } = require('tailwindcss/defaultTheme');
+module.exports = {
+    theme: {
+        screens: {
+            ...screens,
+            override: '0px',
+        }
+    }
+}
 ```
 
-You can publish the config file with:
-```bash
-php artisan vendor:publish --provider="Jwohlfert23\LaravelTall\BladeTailwindServiceProvider" --tag="laravel-tall-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
+In practice, this will allow "bg-blue-500 override:bg-green-500" to always be a green button. Shout out to @ianjamieson for this
+solution (https://github.com/tailwindlabs/tailwindcss/discussions/1446#discussioncomment-525828)
 
 ## Usage
 
-```php
-$blade-tailwind = new Jwohlfert23\LaravelTall();
-echo $blade-tailwind->echoPhrase('Hello, Spatie!');
+Just use these components in your blade templates like so:
+
+```html
+<x-date :date="Carbon::now()" />
 ```
 
-## Testing
-
-```bash
-composer test
-```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Documentation on each component coming soon. For now, it's best to look at the source code.
 
 ## Contributing
 
