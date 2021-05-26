@@ -1,18 +1,11 @@
 <?php
-$message = null;
 $color = null;
 $icon = null;
 
-if ($message = session('error')) {
+if ($message = session('error') ?: session('danger')) {
     $color = 'red';
     $icon = 'x-circle';
-} elseif ($message = session('danger')) {
-    $color = 'red';
-    $icon = 'x-circle';
-} elseif ($message = session('success')) {
-    $color = 'green';
-    $icon = 'check-circle';
-} elseif ($message = session('status')) {
+} elseif ($message = session('success') ?: session('status')) {
     $color = 'green';
     $icon = 'check-circle';
 } elseif ($message = session('warning')) {
@@ -24,6 +17,6 @@ if ($message = session('error')) {
 }
 ?>
 
-@if($message)
-   <x-alert :color="$color" :icon="$icon">{{$message}}</x-alert>
+@if(!empty($message))
+    <x-alert :color="$color" :icon="$icon">{{$message}}</x-alert>
 @endif

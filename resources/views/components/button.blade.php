@@ -4,11 +4,13 @@ $size = $size ?? 'md';
 $component = $component ?? 'button';
 
 if (\Illuminate\Support\Str::startsWith($color, 'bg-')) {
-    $colorClasses = $color;
+    $colorClasses = "$color text-white hover:text-gray-50";
 } elseif ($color === 'white') {
     $colorClasses = "bg-white hover:bg-gray-100 text-gray-800 hover:text-gray-900";
-} else {
-    $colorClasses = "bg-$color hover:bg-opacity-95";
+} elseif ($color === 'primary') {
+    $colorClasses = "bg-primary hover:bg-opacity-95 text-white hover:text-gray-50";
+} elseif ($color === 'secondary') {
+    $colorClasses = "bg-secondary hover:bg-opacity-95 text-white hover:text-gray-50";
 }
 
 if ($size === 'lg') {
@@ -19,8 +21,8 @@ if ($size === 'lg') {
     $sizeClasses = 'py-2 px-4 text-sm';
 }
 
-$classes = "btn flex justify-center $sizeClasses $colorClasses border border-transparent font-medium rounded-md transition duration-100 ease-in-out shadow-sm text-white";
-$attributes = $attributes->except(['color', 'size', 'component'])->merge(['class' => $classes]);
+$classes = "btn flex justify-center $sizeClasses $colorClasses border border-transparent font-medium rounded-md transition duration-100 ease-in-out shadow-sm";
+$attributes = $attributes->except('color', 'size', 'component')->merge(['class' => $classes]);
 ?>
 @if($component === 'a')
     <a {{$attributes->merge(['role'=>'button'])}}>
